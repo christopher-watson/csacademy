@@ -16,8 +16,7 @@
             box-sizing: border-box;
         }
 
-        body{
-
+        body {
             background: #f8f8f899;
         }
 
@@ -57,14 +56,28 @@
         }
 
         .main {
-            display: flex;
-            height: 80vh;
+            display: grid;
             text-align: center;
             align-items: center;
             justify-content: center;
             background: #355C8E;
             border: 5px solid #F8F8F8;
+            grid-template-rows: repeat(6, 1fr);
         }
+
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100px;
+            width: 600px;
+            background: #F8F8F8;
+            margin: 20px 0;
+            padding: 20px 0;
+            flex-direction: column;
+        }
+
+
     </style>
     <div class="wrapper">
         <div class="jumbo">
@@ -73,11 +86,29 @@
             <div class="logo">LOGO</div>
         </div>
         <main class="main">
-            MAIN
+            <div class="section cta">
+                <div class="quote">Quote</div>
+                Application link
+            </div>
+            <div class="section overview">
+                overview
+            </div>
+            <div class="section events">
+                Events
+                <div class="image-carousel">
+                    Image Carousel
+                </div>
+            </div>
+            <div class="section staff">
+                Staff
+            </div>
+            <div class="section about">
+                Requirements
+            </div>
+            <div class="section contact">
+                Contact
+            </div>
         </main>
-        <div class="">
-            EXTRA
-        </div>
     </div>
 
 </body>
