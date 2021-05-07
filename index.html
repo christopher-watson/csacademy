@@ -10,10 +10,12 @@
 
 <body>
     <style>
+        /* ------------------------------------------------- global */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
 
         body {
@@ -26,6 +28,16 @@
             grid-template-rows: repeat(3, min-content);
             justify-content: center;
         }
+
+        .section-heading {
+            font-weight: bold;
+            font-size: 1.5em;
+            font-family: 'Courier New', Courier, monospace;
+            text-decoration: underline;
+            margin-bottom: 5px;
+        }
+
+        /* ------------------------------------------------- jumbo */
 
         .script {
             font-size: 2em;
@@ -55,6 +67,8 @@
             padding: 10px 0;
         }
 
+        /* ------------------------------------------------- main */
+
         .main {
             display: grid;
             text-align: center;
@@ -77,36 +91,75 @@
             flex-direction: column;
         }
 
+        /* ------------------------------------------------- cta */
+
+        .cta-text {
+            font-size: 1.3em;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .quote {
+            font-family: serif;
+            font-style: italic;
+        }
+
+        .apply-button{
+            padding: 10px 20px;
+            border-radius: 10px;
+            margin: 10px 0;
+            border: 1px solid black;
+            text-decoration: none;
+            color: black;
+            background: lightgrey;
+            font-weight: bold;
+        }
+
+        .apply-button:hover {
+            background: #355C8E;
+            color: #F8F8F8;
+            cursor: pointer;
+        }
+
+        /* ------------------------------------------------- overview */
+        .overview{
+            padding: 20px;
+        }
+
 
     </style>
     <div class="wrapper">
         <div class="jumbo">
             <div class="script">Sayreville War Memorial HS</div>
             <div class="monospace">Academy of Computer Science</div>
-            <div class="logo">LOGO</div>
+            <!-- <div class="logo">LOGO</div> -->
         </div>
         <main class="main">
             <div class="section cta">
-                <div class="quote">Quote</div>
-                Application link
+                <div class="cta-text">
+                    Interested in joining the SWMHS Academy of Computer Science? 
+                </div>
+                <a href="#" target="_blank" class="apply-button">Click Here to Apply</a>
+                <div class="quote">“First, solve the problem. Then, write the code.” – John Johnson</div>
             </div>
-            <div class="section overview">
-                overview
+            <div class="section about">
+                <h2 class="section-heading">About the Academy</h2>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima placeat architecto aspernatur modi voluptas, ratione nihil a officiis consectetur omnis doloribus rerum. Aliquam fugit voluptates, repellendus in ad nam earum tenetur qui tempore maxime, ea incidunt porro est, dolores asperiores excepturi. Officiis, ut! Delectus, laudantium? Repellendus odit possimus incidunt earum.
             </div>
             <div class="section events">
-                Events
+                <h2 class="section-heading">Events</h2>
                 <div class="image-carousel">
                     Image Carousel
                 </div>
             </div>
             <div class="section staff">
-                Staff
+                <h2 class="section-heading">Staff</h2>
             </div>
-            <div class="section about">
-                Requirements
+            <div class="section req">
+                <h2 class="section-heading">Requirements</h2>
             </div>
             <div class="section contact">
-                Contact
+                <h2 class="section-heading">Contact Us</h2>
+                <a href="mailto:Mala.Maharana@sayrevillek12.net&subject=SWMHS Computer Science Academy">Mala Maharana [Academy Supervisor]</a>
             </div>
         </main>
     </div>
