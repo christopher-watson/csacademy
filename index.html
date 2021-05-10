@@ -2,10 +2,13 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <!-- <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CS Academy</title>
+    <title>CS Academy</title> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Open+Sans&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -15,7 +18,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif;
         }
 
         body {
@@ -41,7 +44,7 @@
 
         .script {
             font-size: 2em;
-            font-family: "Brush Script MT", cursive;
+            font-family: 'Courgette', "Brush Script MT", cursive;
             padding: 10px 0;
         }
 
@@ -76,7 +79,7 @@
             justify-content: center;
             background: #355C8E;
             border: 5px solid #F8F8F8;
-            grid-template-rows: repeat(6, 1fr);
+            grid-template-rows: repeat(6, min-content);
         }
 
         .section {
@@ -103,7 +106,7 @@
             font-style: italic;
         }
 
-        .apply-button{
+        .apply-button {
             padding: 10px 20px;
             border-radius: 10px;
             margin: 10px 0;
@@ -120,9 +123,39 @@
             cursor: pointer;
         }
 
-        /* ------------------------------------------------- overview */
-        .overview{
+        /* ------------------------------------------------- about */
+        .about {
             padding: 20px;
+        }
+
+        /* ------------------------------------------------- staff */
+        .staff-card {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-areas: "image text";
+            align-items: center;
+            justify-content: center;
+            padding: 10px 0;
+            height: max-content;
+        }
+
+        .staff-image img {
+            width: 150px;
+            height: 150px;
+        }
+
+        .staff-info {
+            display: grid;
+            grid-template-rows: repeat(3, min-content);
+            text-align: left;
+        }
+
+        .staff-info a, div, ul {
+            padding: 5px 0;
+        }
+
+        .courses {
+            margin-left: 20px;
         }
 
 
@@ -135,15 +168,18 @@
         </div>
         <main class="main">
             <div class="section cta">
-                <div class="cta-text">
-                    Interested in joining the SWMHS Academy of Computer Science? 
+                <div class="section-heading">
+                    Interested in joining the SWMHS Academy of Computer Science?
                 </div>
                 <a href="#" target="_blank" class="apply-button">Click Here to Apply</a>
                 <div class="quote">“First, solve the problem. Then, write the code.” – John Johnson</div>
             </div>
             <div class="section about">
                 <h2 class="section-heading">About the Academy</h2>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima placeat architecto aspernatur modi voluptas, ratione nihil a officiis consectetur omnis doloribus rerum. Aliquam fugit voluptates, repellendus in ad nam earum tenetur qui tempore maxime, ea incidunt porro est, dolores asperiores excepturi. Officiis, ut! Delectus, laudantium? Repellendus odit possimus incidunt earum.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima placeat architecto aspernatur modi
+                voluptas, ratione nihil a officiis consectetur omnis doloribus rerum. Aliquam fugit voluptates,
+                repellendus in ad nam earum tenetur qui tempore maxime, ea incidunt porro est, dolores asperiores
+                excepturi. Officiis, ut! Delectus, laudantium? Repellendus odit possimus incidunt earum.
             </div>
             <div class="section events">
                 <h2 class="section-heading">Events</h2>
@@ -153,13 +189,40 @@
             </div>
             <div class="section staff">
                 <h2 class="section-heading">Staff</h2>
+                <div class="staff-container">
+                    <div class="staff1 staff-card">
+                        <div class="staff-image">
+                            <img src="https://picsum.photos/200" alt="Atiyah Conry">
+                        </div>
+                        <div class="staff-info">
+                            <div>Atiyah Conry</div>
+                            <a href="mailto:Atiyah.Conry@sayrevillek12.net">Atiyah.Conry@sayrevillek12.net</a>
+                            <ul class="courses">
+                                <li>AP Computer Science A</li>
+                                <li>AP Computer Science Principles</li>
+                                <li>Cisco Networking & Design</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="staff2 staff-card">
+                        <div class="staff-image">
+                            <img src="" alt="">
+                        </div>
+                        <div class="staff-info">
+                            name
+                            email
+                            extension
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="section req">
                 <h2 class="section-heading">Requirements</h2>
             </div>
             <div class="section contact">
                 <h2 class="section-heading">Contact Us</h2>
-                <a href="mailto:Mala.Maharana@sayrevillek12.net&subject=SWMHS Computer Science Academy">Mala Maharana [Academy Supervisor]</a>
+                <a href="mailto:Mala.Maharana@sayrevillek12.net&subject=SWMHS Computer Science Academy">Mala Maharana
+                    [Academy Supervisor]</a>
             </div>
         </main>
     </div>
