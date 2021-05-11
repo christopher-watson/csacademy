@@ -8,6 +8,7 @@
     <title>CS Academy</title> -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
 
 </head>
 
@@ -27,7 +28,7 @@
 
         .wrapper {
             display: grid;
-            grid-template-columns: minmax(auto, 850px);
+            grid-template-columns: minmax(auto, 720px);
             grid-template-rows: repeat(3, min-content);
             justify-content: center;
         }
@@ -46,12 +47,14 @@
             font-size: 2em;
             font-family: 'Courgette', "Brush Script MT", cursive;
             padding: 10px 0;
+            text-shadow: 2px 2px 2px black;
         }
 
         .monospace {
             font-size: 1.5em;
             font-family: 'Courier New', Courier, monospace;
             padding: 10px 0;
+            text-shadow: 2px 2px 2px black;
         }
 
         .jumbo {
@@ -92,6 +95,8 @@
             margin: 20px 0;
             padding: 20px 0;
             flex-direction: column;
+            border-radius: 25px;
+            box-shadow: 0 5px 5px black;
         }
 
         /* ------------------------------------------------- cta */
@@ -128,10 +133,119 @@
             padding: 20px;
         }
 
+
+
+
+        /* ------------------------------------------------- events */
+        .events {
+            overflow: hidden;
+        }
+
+        /* --------------- image carousel */
+
+        .carousel-div {
+            display: grid;
+            grid-template-rows: repeat(3, min-content);
+            grid-template-areas:
+                "top"
+                "mid";
+            justify-items: center;
+        }
+
+        .top {
+            grid-area: top;
+            margin-bottom: 20px;
+        }
+
+        .pic-div {
+            grid-area: mid;
+            display: grid;
+            grid-template-columns: 90px 300px 90px;
+            grid-template-rows: repeat(2, min-content);
+            grid-template-areas:
+                "left-ar center-pic right-arr";
+        }
+
+        .inner-pic {
+            grid-area: center-pic;
+            position: relative;
+            /* display: inline-block; */
+        }
+
+        .pic {
+            /* border-radius: 50px 50px 0 0; */
+            display: block !important;
+            background: #000;
+            width: 100%;
+            height: 100%;
+        }
+
+        [state=hidden] {
+            opacity: 0;
+            transition: opacity .7s;
+            -webkit-transition: opacity .7s;
+        }
+
+        [state=active] {
+            opacity: 1;
+            transition: opacity .7s;
+            -webkit-transition: opacity .7s;
+        }
+
+        .pic-text {
+            position: absolute;
+            /* color: var(--ghost); */
+            color: #FBFBFF;
+            width: 70%;
+            text-align: center;
+            padding: 10px;
+            /* background-color: var(--opaque); */
+            background-color: #040F1625;
+            bottom: -5%;
+            left: 50%;
+            margin-right: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 25px;
+            font-size: 19px;
+            font-family: Helvetica, Arial, sans-serif
+        }
+
+        #left-arrow {
+            grid-area: left-ar;
+            text-align: right;
+            margin-right: 10px;
+            /* width: 100%; */
+            /* display: none; */
+        }
+
+        #right-arrow {
+            grid-area: right-arr;
+            margin-left: 10px;
+        }
+
+        .arrow {
+            font-size: 60px;
+            margin: auto 0;
+            background: none;
+        }
+
+        .arrow:hover {
+            color: var(--ebony);
+        }
+
+        [disabled=true] {
+            visibility: hidden;
+        }
+
+        .pic-select {
+            display: none;
+        }
+
+
         /* ------------------------------------------------- staff */
         .staff-card {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 200px 1fr;
             grid-template-areas: "image text";
             align-items: center;
             justify-content: center;
@@ -150,15 +264,15 @@
             text-align: left;
         }
 
-        .staff-info a, div, ul {
+        .staff-info a,
+        div,
+        ul {
             padding: 5px 0;
         }
 
         .courses {
             margin-left: 20px;
         }
-
-
     </style>
     <div class="wrapper">
         <div class="jumbo">
@@ -183,9 +297,50 @@
             </div>
             <div class="section events">
                 <h2 class="section-heading">Events</h2>
+
                 <div class="image-carousel">
-                    Image Carousel
+                    <div class="carousel-div">
+                        <div class="top">
+                            <div class="pic-num"><span id="pic-num-span">1</span> / <span
+                                    id="total-pic-num-span">5</span></div>
+                        </div>
+                        <div class="pic-div">
+                            <i class="fas fa-chevron-circle-left arrow" id="left-arrow" disabled=false
+                                title="Previous"></i>
+                            <i class="fas fa-chevron-circle-right arrow" id="right-arrow" disabled=false
+                                title="Next"></i>
+                            <div class="inner-pic">
+                                <img class="pic" id="pic1" num="0" state="active" src="https://picsum.photos/200">
+                                <div class="pic-text">Lorem ipsum dolor sit amet consectetur adipisicing elit</div>
+                            </div>
+                            <div class="inner-pic">
+                                <img class="pic" id="pic2" num="1" state="hidden" src="https://picsum.photos/200">
+                                <div class="pic-text">Lorem ipsum dolor sit amet consectetur adipisicing elit</div>
+                            </div>
+                            <div class="inner-pic">
+                                <img class="pic" id="pic3" num="2" state="hidden" src="https://picsum.photos/200">
+                                <div class="pic-text">Lorem ipsum dolor sit amet consectetur adipisicing elit</div>
+                            </div>
+                            <div class="inner-pic">
+                                <img class="pic" id="pic4" num="3" state="hidden" src="https://picsum.photos/200">
+                                <div class="pic-text">Lorem ipsum dolor sit amet consectetur adipisicing elit</div>
+                            </div>
+                            <div class="inner-pic">
+                                <img class="pic" id="pic5" num="4" state="hidden" src="https://picsum.photos/200">
+                                <div class="pic-text">Lorem ipsum dolor sit amet consectetur adipisicing elit</div>
+                            </div>
+                            <div class="pic-select">
+                                <div class="dot hover" id="0"></div>
+                                <div class="dot hover" id="1"></div>
+                                <div class="dot hover" id="2"></div>
+                                <div class="dot hover" id="3"></div>
+                                <div class="dot hover" id="4"></div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
+
             </div>
             <div class="section staff">
                 <h2 class="section-heading">Staff</h2>
@@ -206,26 +361,131 @@
                     </div>
                     <div class="staff2 staff-card">
                         <div class="staff-image">
-                            <img src="" alt="">
+                            <img src="https://picsum.photos/200" alt="Christopher Watson">
                         </div>
                         <div class="staff-info">
-                            name
-                            email
-                            extension
+                            <div>Christopher Watson</div>
+                            <a
+                                href="mailto:Christopher.Watson@sayrevillek12.net">Christopher.Watson@sayrevillek12.net</a>
+                            <ul class="courses">
+                                <li>AP Computer Science Principles</li>
+                                <li>Front End Web Development</li>
+                                <li>Advanced Concepts in CS</li>
+                            </ul>
                         </div>
                     </div>
+
                 </div>
             </div>
             <div class="section req">
                 <h2 class="section-heading">Requirements</h2>
+                In order to apply for the academy you must meet the following requirements:
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                In order to graduate from the academy you must maintain a 3.0 GPA in all Academy Courses.
             </div>
             <div class="section contact">
                 <h2 class="section-heading">Contact Us</h2>
-                <a href="mailto:Mala.Maharana@sayrevillek12.net&subject=SWMHS Computer Science Academy">Mala Maharana
+                <a href="mailto:Mala.Maharana@sayrevillek12.net&subject=SWMHS Computer Science Academy">Mala
+                    Maharana
                     [Academy Supervisor]</a>
             </div>
         </main>
     </div>
+    <script>
+        // Carousel Handler
+        const leftArrow = document.getElementById('left-arrow');
+        leftArrow.onclick = function () { arrowHandler(), prevPic() };
+
+        const rightArrow = document.getElementById('right-arrow');
+        rightArrow.onclick = function () { arrowHandler(), nextPic() };
+
+        const photoNum = document.getElementById('pic-num-span');
+        const totalPhotos = document.getElementById('total-pic-num-span');
+        const images = document.getElementsByClassName('pic');
+        const picSelector = document.querySelectorAll('.dot');
+
+        let picIndex = 0;
+
+        for (let i = 0; i < picSelector.length; i++) {
+            picSelector[i].addEventListener('click', function () {
+                for (let j = 0; j < images.length; j++) {
+                    if (images[j].attributes.num.value == this.id) {
+                        images[this.id].attributes.state.value = 'active';
+                        images[this.id].style.opacity = 1;
+                        picSelector[this.id].style.background = '#01baef'
+                        picIndex = j;
+                    }
+                    if (images[j].attributes.num.value != this.id) {
+                        images[j].attributes.state.value = 'hidden';
+                        images[j].style.opacity = 0;
+                        picSelector[j].style.background = '#01baef80'
+                    }
+                }
+                arrowHandler();
+                numberHandler();
+            });
+        }
+
+        prevPic = () => {
+            for (let i = 0; i < images.length; i++) {
+                if (images[picIndex].attributes.state.value === 'active') {
+                    images[picIndex - 1].attributes.state.value = 'active';
+                    images[picIndex - 1].style.opacity = 1;
+                    images[picIndex].attributes.state.value = 'hidden';
+                    images[picIndex].style.opacity = 0;
+                    picSelector[picIndex - 1].style.background = '#01baef'
+                    picSelector[picIndex].style.background = '#01baef80'
+                }
+            }
+            picIndex--;
+        }
+
+        nextPic = () => {
+            for (let i = 0; i < (images.length + 1); i++) {
+                if (images[picIndex].attributes.state.value === 'active') {
+                    images[picIndex + 1].attributes.state.value = 'active';
+                    images[picIndex + 1].style.opacity = 1;
+                    images[picIndex].attributes.state.value = 'hidden';
+                    images[picIndex].style.opacity = 0;
+                    picSelector[picIndex + 1].style.background = '#01baef'
+                    picSelector[picIndex].style.background = '#01baef80'
+                }
+            }
+            picIndex++;
+        }
+
+        arrowHandler = () => {
+            if (picIndex == 0) {
+                leftArrow.attributes.disabled.value = true;
+                rightArrow.attributes.disabled.value = false;
+                picSelector[0].style.background = '#01baef'
+            }
+            if (picIndex > 0) {
+                leftArrow.attributes.disabled.value = false;
+                rightArrow.attributes.disabled.value = false;
+            }
+            if (picIndex == images.length - 1) {
+                rightArrow.attributes.disabled.value = true;
+            }
+
+        }
+
+        numberHandler = () => {
+            photoNum.textContent = picIndex + 1;
+            totalPhotos.textContent = images.length;
+        }
+
+
+        document.onclick = function () { arrowHandler(), numberHandler() };
+        document.addEventListener('DOMContentLoaded', function (e) {
+            arrowHandler();
+            numberHandler();
+        });
+    </script>
 
 </body>
 
