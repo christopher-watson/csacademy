@@ -1,24 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- <head> -->
-<!-- <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CS Academy</title> -->
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Open+Sans&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
-
-<!-- </head> -->
 
 <body>
     <style>
         /* ------------------------------------------------- global */
         * {
-            /* margin: 0; */
-            /* padding: 0; */
-            /* box-sizing: border-box; */
             font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif;
         }
 
@@ -167,7 +157,6 @@
 
         .staff-image img {
             width: 150px;
-            /* height: 150px; */
         }
 
         .staff-info {
@@ -191,7 +180,7 @@
         <div class="jumbo">
             <div class="script">Sayreville War Memorial HS</div>
             <div class="logo">
-                <img src="logo.png" alt="CS Academy Logo">
+                <img src="https://swmhscsacademy.netlify.app/logo.png" alt="CS Academy Logo">
             </div>
             <div class="monospace">Academy of Computer Science</div>
         </div>
@@ -309,111 +298,6 @@
             <div class="buffer"></div>
         </main>
     </div>
-    <script>
-        // Carousel Handler
-        const leftArrow = document.getElementById('left-arrow');
-        leftArrow.onclick = function () { arrowHandler(), prevPic() };
-
-        const rightArrow = document.getElementById('right-arrow');
-        rightArrow.onclick = function () { arrowHandler(), nextPic() };
-
-        const photoNum = document.getElementById('pic-num-span');
-        const totalPhotos = document.getElementById('total-pic-num-span');
-        const images = document.getElementsByClassName('pic');
-        const imageText = document.getElementsByClassName('pic-text');
-        const picSelector = document.querySelectorAll('.dot');
-
-        let picIndex = 0;
-
-        for (let i = 0; i < picSelector.length; i++) {
-            picSelector[i].addEventListener('click', function () {
-                for (let j = 0; j < images.length; j++) {
-                    if (images[j].attributes.num.value == this.id) {
-                        images[this.id].attributes.state.value = 'active';
-                        imageText[this.id].attributes.state.value = 'active';
-                        images[this.id].style.opacity = 1;
-                        imageText[this.id].style.opacity = 1;
-                        picSelector[this.id].style.background = '#01baef'
-                        picIndex = j;
-                    }
-                    if (images[j].attributes.num.value != this.id) {
-                        images[j].attributes.state.value = 'hidden';
-                        imageText[j].attributes.state.value = 'hidden';
-                        images[j].style.opacity = 0;
-                        imageText[j].style.opacity = 0;
-                        picSelector[j].style.background = '#01baef80'
-                    }
-                }
-                arrowHandler();
-                numberHandler();
-            });
-        }
-
-        prevPic = () => {
-            for (let i = 0; i < images.length; i++) {
-                if (images[picIndex].attributes.state.value === 'active') {
-                    images[picIndex - 1].attributes.state.value = 'active';
-                    imageText[picIndex - 1].attributes.state.value = 'active';
-                    images[picIndex - 1].style.opacity = 1;
-                    imageText[picIndex - 1].style.opacity = 1;
-                    images[picIndex].attributes.state.value = 'hidden';
-                    imageText[picIndex].attributes.state.value = 'hidden';
-                    images[picIndex].style.opacity = 0;
-                    imageText[picIndex].style.opacity = 0;
-                    picSelector[picIndex - 1].style.background = '#01baef'
-                    picSelector[picIndex].style.background = '#01baef80'
-                }
-            }
-            picIndex--;
-        }
-
-        nextPic = () => {
-            for (let i = 0; i < (images.length + 1); i++) {
-                if (images[picIndex].attributes.state.value === 'active') {
-                    images[picIndex + 1].attributes.state.value = 'active';
-                    imageText[picIndex + 1].attributes.state.value = 'active';
-                    images[picIndex + 1].style.opacity = 1;
-                    imageText[picIndex + 1].style.opacity = 1;
-                    imageText[picIndex].attributes.state.value = 'hidden';
-                    imageText[picIndex].attributes.state.value = 'hidden';
-                    images[picIndex].style.opacity = 0;
-                    imageText[picIndex].style.opacity = 0;
-                    picSelector[picIndex + 1].style.background = '#01baef'
-                    picSelector[picIndex].style.background = '#01baef80'
-                }
-            }
-            picIndex++;
-        }
-
-        arrowHandler = () => {
-            if (picIndex == 0) {
-                leftArrow.attributes.disabled.value = true;
-                rightArrow.attributes.disabled.value = false;
-                picSelector[0].style.background = '#01baef'
-            }
-            if (picIndex > 0) {
-                leftArrow.attributes.disabled.value = false;
-                rightArrow.attributes.disabled.value = false;
-            }
-            if (picIndex == images.length - 1) {
-                rightArrow.attributes.disabled.value = true;
-            }
-
-        }
-
-        numberHandler = () => {
-            photoNum.textContent = picIndex + 1;
-            totalPhotos.textContent = images.length;
-        }
-
-
-        document.onclick = function () { arrowHandler(), numberHandler() };
-        document.addEventListener('DOMContentLoaded', function (e) {
-            arrowHandler();
-            numberHandler();
-        });
-    </script>
-
 </body>
 
 </html>
