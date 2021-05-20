@@ -2,13 +2,13 @@
 <html lang="en">
 
 <!-- <head> -->
-    <!-- <meta charset="UTF-8">
+<!-- <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CS Academy</title> -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Open+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
 
 <!-- </head> -->
 
@@ -22,8 +22,7 @@
             font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif;
         }
 
-        body {
-        }
+        body {}
 
         .wrapper-div {
             background: #f8f8f899;
@@ -149,105 +148,10 @@
             overflow: hidden;
         }
 
-        /* --------------- image carousel */
-
-        .carousel-div {
-            display: grid;
-            grid-template-rows: repeat(3, min-content);
-            grid-template-areas:
-                "top"
-                "mid";
-            justify-items: center;
-        }
-
-        .top {
-            grid-area: top;
-            margin-bottom: 20px;
-        }
-
-        .pic-div {
-            grid-area: mid;
-            display: grid;
-            grid-template-columns: 90px 300px 90px;
-            grid-template-rows: repeat(2, min-content);
-            grid-template-areas:
-                "left-ar center-pic right-arr";
-        }
-
-        .inner-pic {
-            grid-area: center-pic;
-            position: relative;
-            /* display: inline-block; */
-        }
-
         .pic {
-            /* border-radius: 50px 50px 0 0; */
-            display: block !important;
-            background: #000;
-            width: 100%;
-            height: 100%;
+            width: 300px;
         }
 
-        [state=hidden] {
-            opacity: 0;
-            transition: opacity .7s;
-            -webkit-transition: opacity .7s;
-        }
-
-        [state=active] {
-            opacity: 1;
-            transition: opacity .7s;
-            -webkit-transition: opacity .7s;
-        }
-
-        .pic-text {
-            position: absolute;
-            /* color: var(--ghost); */
-            color: #FBFBFF;
-            width: 70%;
-            text-align: center;
-            padding: 10px;
-            /* background-color: var(--opaque); */
-            background-color: #040F1625;
-            bottom: 5%;
-            left: 50%;
-            margin-right: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 25px;
-            font-size: 19px;
-            font-family: Helvetica, Arial, sans-serif
-        }
-
-        #left-arrow {
-            grid-area: left-ar;
-            text-align: right;
-            margin-right: 10px;
-            /* width: 100%; */
-            /* display: none; */
-        }
-
-        #right-arrow {
-            grid-area: right-arr;
-            margin-left: 10px;
-        }
-
-        .arrow {
-            font-size: 60px;
-            margin: auto 0;
-            background: none;
-        }
-
-        .arrow:hover {
-            color: var(--ebony);
-        }
-
-        [disabled=true] {
-            visibility: hidden;
-        }
-
-        .pic-select {
-            display: none;
-        }
 
 
         /* ------------------------------------------------- staff */
@@ -263,18 +167,13 @@
 
         .staff-image img {
             width: 150px;
-            height: 150px;
+            /* height: 150px; */
         }
 
         .staff-info {
             display: grid;
             grid-template-rows: repeat(3, min-content);
             text-align: left;
-        }
-
-        .staff-info a,
-        div,
-        ul {
         }
 
         .courses {
@@ -301,7 +200,8 @@
                 <div class="section-heading">
                     Interested in joining the SWMHS Academy of Computer Science?
                 </div>
-                <a href="https://forms.gle/e5jc9ouUmiM2j99Q8" target="_blank" class="apply-button">Click Here to Apply</a>
+                <a href="https://forms.gle/e5jc9ouUmiM2j99Q8" target="_blank" class="apply-button">Click Here to
+                    Apply</a>
                 <div class="quote">“First, solve the problem. Then, write the code.” – John Johnson</div>
             </div>
             <div class="section about">
@@ -309,58 +209,42 @@
                 The goal for the Acadmey of Computer Science is to more effectively and thoroughly prepare students for
                 ALL college endeavors and future careers.
                 <br>
-                Empowered by Innovation, we want our students to be 
+                Empowered by Innovation, we want our students to be
                 <br>
                 Digital Leaders of Tomorrow.
                 <br class="margin">
                 We provide for students in Computer Science curriculum beyond that which is normal: diverse and
-                progressive teaching methods, 
+                progressive teaching methods,
                 <br>
                 materials, ideas, mentors, and peers.
             </div>
             <div class="section events">
                 <h2 class="section-heading">Events</h2>
-
-                <div class="image-carousel">
-                    <div class="carousel-div">
-                        <div class="top">
-                            <div class="pic-num"><span id="pic-num-span">1</span> / <span
-                                    id="total-pic-num-span">5</span></div>
-                        </div>
-                        <div class="pic-div">
-                            <i class="fas fa-chevron-circle-left arrow" id="left-arrow" disabled=false
-                                title="Previous"></i>
-                            <i class="fas fa-chevron-circle-right arrow" id="right-arrow" disabled=false
-                                title="Next"></i>
-                            <div class="inner-pic">
-                                <img class="pic" id="pic1" num="0" state="active" src="https://lh3.googleusercontent.com/pw/ACtC-3dQmDjR4E-TCO36ImKIevLnJBhi4UfZte2-kiRV19CZNeUsfoWvyiaIIQzYtD_TvyXG1ZbW9a6mfNgb1WCKSpJTzdDkyr4h853AaQGiISwEleyM1BKe-QSHlx-aEPHCLqJ0Keg9pFzMvuE2j-8kyaOuwg=w646-h861-no?authuser=0">
-                                <div class="pic-text" num="0" state="active">Code Night 2020</div>
-                            </div>
-                            <div class="inner-pic">
-                                <img class="pic" id="pic2" num="1" state="hidden" src="https://lh3.googleusercontent.com/pw/ACtC-3f52wsKcMPhD3ShfXlU4zcQAG6bEJZNi8arRqXH6x2hiLFzA53IwIgk8ylrMYREHYRIDpZaNRsdR6fcXxnk0cdUT4GazoxAtjg59WrNOI0AWTKie3StcGrKAYm9RtzRgIMe_JWxOsY_sZklGfBwGHHNAw=w1148-h861-no?authuser=0">
-                                <div class="pic-text" num="1" state="hidden">Guest Speakers</div>
-                            </div>
-                            <div class="inner-pic">
-                                <img class="pic" id="pic3" num="2" state="hidden" src="https://lh3.googleusercontent.com/pw/ACtC-3fzmbyQIFB1sbOgk1JzhOPBHvVbhtElsQoUFM0LBhbBjUfYAFpx5vkG3nWtTXEjkJJachvsZ_6aBXIkhFSl_guYnVJ6of8eZw2SwNUheXPmwvEIKEtVsq_ncKCv6-H8KNnNKRjkEdb9SQjhi5oG-q688w=w646-h861-no?authuser=0">
-                                <div class="pic-text" num="2" state="hidden">Virtual Reality</div>
-                            </div>
-                            <div class="inner-pic">
-                                <img class="pic" id="pic4" num="3" state="hidden" src="https://lh3.googleusercontent.com/pw/ACtC-3dBMBZE3AB6oncBBlAj1r2w6oVlaoJlM9jscwav6PlDn6fV1vsXK7NEDS1peObkuqH7xlYRCZsTIFYnUBTfm_lCjj5Am1Fl_QLN2N7QT6uatPClGx0S4-Hc1gfd_FSDvKE4uQrIUb5Kyi9mtpWBgQwZvA=w646-h861-no?authuser=0">
-                                <div class="pic-text" num="3" state="hidden">Girls Who Code</div>
-                            </div>
-                            <div class="inner-pic">
-                                <img class="pic" id="pic5" num="4" state="hidden" src="https://lh3.googleusercontent.com/pw/ACtC-3cyY-J7Es0Tczs2guWwwpnJu4w2467uHrVBTFex49CLV9OO18gWvqNplgzoZdr9BCsEMORLXp2hDbp0ptNA1h0ub87WYCRs5yXv4K6DWfBikHbK78Jt0lw_Eyg5qLMBdrmLQJLm98ZmtKnRZEaIl_TpwQ=w1148-h861-no?authuser=0">
-                                <div class="pic-text" num="4" state="hidden">Code Night 2020</div>
-                            </div>
-                            <div class="pic-select">
-                                <div class="dot hover" id="0"></div>
-                                <div class="dot hover" id="1"></div>
-                                <div class="dot hover" id="2"></div>
-                                <div class="dot hover" id="3"></div>
-                                <div class="dot hover" id="4"></div>
-                            </div>
-
-                        </div>
+                <div class="pic-div">
+                    <div class="inner-pic">
+                        <img class="pic" id="pic1" num="0" state="active"
+                            src="https://lh3.googleusercontent.com/pw/ACtC-3dQmDjR4E-TCO36ImKIevLnJBhi4UfZte2-kiRV19CZNeUsfoWvyiaIIQzYtD_TvyXG1ZbW9a6mfNgb1WCKSpJTzdDkyr4h853AaQGiISwEleyM1BKe-QSHlx-aEPHCLqJ0Keg9pFzMvuE2j-8kyaOuwg=w646-h861-no?authuser=0">
+                        <div class="pic-text" num="0" state="active">Code Night 2020</div>
+                    </div>
+                    <div class="inner-pic">
+                        <img class="pic" id="pic2" num="1" state="hidden"
+                            src="https://lh3.googleusercontent.com/pw/ACtC-3f52wsKcMPhD3ShfXlU4zcQAG6bEJZNi8arRqXH6x2hiLFzA53IwIgk8ylrMYREHYRIDpZaNRsdR6fcXxnk0cdUT4GazoxAtjg59WrNOI0AWTKie3StcGrKAYm9RtzRgIMe_JWxOsY_sZklGfBwGHHNAw=w1148-h861-no?authuser=0">
+                        <div class="pic-text" num="1" state="hidden">Guest Speakers</div>
+                    </div>
+                    <div class="inner-pic">
+                        <img class="pic" id="pic3" num="2" state="hidden"
+                            src="https://lh3.googleusercontent.com/pw/ACtC-3fzmbyQIFB1sbOgk1JzhOPBHvVbhtElsQoUFM0LBhbBjUfYAFpx5vkG3nWtTXEjkJJachvsZ_6aBXIkhFSl_guYnVJ6of8eZw2SwNUheXPmwvEIKEtVsq_ncKCv6-H8KNnNKRjkEdb9SQjhi5oG-q688w=w646-h861-no?authuser=0">
+                        <div class="pic-text" num="2" state="hidden">Virtual Reality</div>
+                    </div>
+                    <div class="inner-pic">
+                        <img class="pic" id="pic4" num="3" state="hidden"
+                            src="https://lh3.googleusercontent.com/pw/ACtC-3dBMBZE3AB6oncBBlAj1r2w6oVlaoJlM9jscwav6PlDn6fV1vsXK7NEDS1peObkuqH7xlYRCZsTIFYnUBTfm_lCjj5Am1Fl_QLN2N7QT6uatPClGx0S4-Hc1gfd_FSDvKE4uQrIUb5Kyi9mtpWBgQwZvA=w646-h861-no?authuser=0">
+                        <div class="pic-text" num="3" state="hidden">Girls Who Code</div>
+                    </div>
+                    <div class="inner-pic">
+                        <img class="pic" id="pic5" num="4" state="hidden"
+                            src="https://lh3.googleusercontent.com/pw/ACtC-3cyY-J7Es0Tczs2guWwwpnJu4w2467uHrVBTFex49CLV9OO18gWvqNplgzoZdr9BCsEMORLXp2hDbp0ptNA1h0ub87WYCRs5yXv4K6DWfBikHbK78Jt0lw_Eyg5qLMBdrmLQJLm98ZmtKnRZEaIl_TpwQ=w1148-h861-no?authuser=0">
+                        <div class="pic-text" num="4" state="hidden">Code Night 2020</div>
                     </div>
                 </div>
 
@@ -370,7 +254,8 @@
                 <div class="staff-container">
                     <div class="staff1 staff-card">
                         <div class="staff-image">
-                            <img src="https://yt3.ggpht.com/ytc/AAUvwnjb4riJHeDuIUvNS21_ujCkEm5cfeOGf0noId2b3g=s900-c-k-c0x00ffffff-no-rj" alt="Atiyah Conry">
+                            <img src="https://lh3.googleusercontent.com/pw/ACtC-3eHa0KnPz7hSZYmBpgiCp-T3jYzlJvYjOJbhVDFB4SgE6upqNo2mrmH3L-nDuF0LM96WYkwBn7_8tjm1lhiish2j-152tX-T1CquXzPaVizwmsNIipCJGf1WYcusQAqDWYHj7MZ6AtwqkYEl27yn86yqg=w646-h861-no?authuser=0"
+                                alt="Atiyah Conry">
                         </div>
                         <div class="staff-info">
                             <div>Atiyah Conry</div>
@@ -384,7 +269,8 @@
                     </div>
                     <div class="staff2 staff-card">
                         <div class="staff-image">
-                            <img src="https://media-exp1.licdn.com/dms/image/C5603AQFAUinRwgTI-g/profile-displayphoto-shrink_200_200/0/1516939681152?e=1626912000&v=beta&t=pG49bZZauM1nYMa0yWLSD5GaGplZqQlrgGKUDtDyKpY" alt="Christopher Watson">
+                            <img src="https://media-exp1.licdn.com/dms/image/C5603AQFAUinRwgTI-g/profile-displayphoto-shrink_200_200/0/1516939681152?e=1626912000&v=beta&t=pG49bZZauM1nYMa0yWLSD5GaGplZqQlrgGKUDtDyKpY"
+                                alt="Christopher Watson">
                         </div>
                         <div class="staff-info">
                             <div>Christopher Watson</div>
@@ -417,7 +303,8 @@
                     [Academy Supervisor]</a>
             </div>
             <div class="logo">
-                <img src="https://lh3.googleusercontent.com/CxA9ZdHo2bUOQi0V7q4nGEp822xR95mpSaS0Mh3BrpltphQMQH_eZ6ULb2yZTPrwNKd4Of-VcX4SA312RLfgbq5xRBTdvMnfQtR07DfvLXkUuptxC5uW1qwofwBKsIeXvv7GAGIT25ChmRubKTJqFVTKNirEopipVju5u_J0iJq9IV23T4MOvyozsiCeq9M3xOl8s48ZscrOAWXNzgIuhcs17kkJqsvsEZPs9b3csflUwxqfZR9_98FC1obKfXjKeLU_o5LaZMGL-zJtfg2rhNuzPNMpAAjZRV0O79hb140J2dZyRWRLwHy2ebv4m_vZHIZPZOwTfyDCL-Gscfk7rO2pf6SryhQTZ4tGo2pYhcNDsNUCfp4g6SLgq8PEziOG78ZvznRBY02nIa59wRVoz3xPWZ1GPF8J5NpslAxEFVwqowGbaMr80-iYlz1EyXadIctnmbWi0d5t3CEc2rOR5VQe2fi89ydfZB13TARi_VSOAE4h4h8u65Qe_ar2vtUDJTKHOzOmsnyDtyE7F1rHur60Wfi9NUSXottcWW69Mjt_Rh2WVy0xv4-VEaWohQ5CWXbPq-UHMvxQTzE1zkYF7qXkNKnp3k6tLYR0msTlkUhjXFavWDXa94sarx5YBpjmzyzhfQiMORmULNQlR081UFERxJUs_PyVJyjovZipU3h_3kS-42MqpZuJRCukaE5-rz_1ApYL_ABrwr2FgYsE8N0E3w=w469-h533-no?authuser=0" alt="SWMHS Logo">
+                <img src="https://lh3.googleusercontent.com/CxA9ZdHo2bUOQi0V7q4nGEp822xR95mpSaS0Mh3BrpltphQMQH_eZ6ULb2yZTPrwNKd4Of-VcX4SA312RLfgbq5xRBTdvMnfQtR07DfvLXkUuptxC5uW1qwofwBKsIeXvv7GAGIT25ChmRubKTJqFVTKNirEopipVju5u_J0iJq9IV23T4MOvyozsiCeq9M3xOl8s48ZscrOAWXNzgIuhcs17kkJqsvsEZPs9b3csflUwxqfZR9_98FC1obKfXjKeLU_o5LaZMGL-zJtfg2rhNuzPNMpAAjZRV0O79hb140J2dZyRWRLwHy2ebv4m_vZHIZPZOwTfyDCL-Gscfk7rO2pf6SryhQTZ4tGo2pYhcNDsNUCfp4g6SLgq8PEziOG78ZvznRBY02nIa59wRVoz3xPWZ1GPF8J5NpslAxEFVwqowGbaMr80-iYlz1EyXadIctnmbWi0d5t3CEc2rOR5VQe2fi89ydfZB13TARi_VSOAE4h4h8u65Qe_ar2vtUDJTKHOzOmsnyDtyE7F1rHur60Wfi9NUSXottcWW69Mjt_Rh2WVy0xv4-VEaWohQ5CWXbPq-UHMvxQTzE1zkYF7qXkNKnp3k6tLYR0msTlkUhjXFavWDXa94sarx5YBpjmzyzhfQiMORmULNQlR081UFERxJUs_PyVJyjovZipU3h_3kS-42MqpZuJRCukaE5-rz_1ApYL_ABrwr2FgYsE8N0E3w=w469-h533-no?authuser=0"
+                    alt="SWMHS Logo">
             </div>
             <div class="buffer"></div>
         </main>
